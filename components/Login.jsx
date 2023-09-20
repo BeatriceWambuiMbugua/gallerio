@@ -1,12 +1,15 @@
 "use client";
 
 import { signIn } from "next-auth/react";
+import { useRouter } from "next/navigation";
 import { useState } from "react";
 
 export default function LoginPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const router = useRouter();
+  const callbackUrl = (router.query?.callbackUrl) ?? "/";
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -22,13 +25,14 @@ export default function LoginPage() {
       setError("Invalid email or password");
     } else {
       // Redirect to the gallery page upon successful login
-      window.location.href = "/";
+      // window.location.href = "/";
+      router.push(callbackUrl);
     }
   };
 
   return (
     <div>
-      <section className="bg-[#f0f0f0] dark:bg-gray-900">
+      <section className="bg-[#f0f0f0] ">
         <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
           <div className="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
             <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
