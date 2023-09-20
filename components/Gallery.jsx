@@ -35,7 +35,7 @@ const DraggableImage = ({ image, index, moveImage }) => {
       }}
     >
       <img
-        className="h-auto max-w-full md:rounded-lg"
+        className="h-auto max-w-full rounded-lg"
         src={image.url}
         alt={`Image ${image.id}`}
       />
@@ -78,7 +78,7 @@ export default function Gallery() {
 
   return (
     <DndProvider backend={HTML5Backend}>
-      <div className="container mx-auto py-10">
+      <div className="container mx-auto py-10 px-2 md:px-0">
         <form className="md:flex items-center  justify-center p-2 mb-4">
           <label htmlFor="simple-search" className="sr-only">
             Search
