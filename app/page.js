@@ -8,6 +8,7 @@ import LoginPage from '@/components/Login';
 
 export default function Home() {
   const { data: session, status } = useSession();
+  
 
   // If the user is not logged in, show a login link
   if (!session) {
