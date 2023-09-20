@@ -5,7 +5,7 @@ import Link from "next/link";
 export default function Navbar() {
   return (
     <div>
-      <div className="container mx-auto flex items-center justify-between  pt-4">
+      <div className="container mx-auto flex items-center justify-between  pt-4 px-2 md:px-0">
         <Link href={"/"} className="flex gap-2 items-center">
           <Image
             src={"/logo.svg"}
