@@ -1,12 +1,13 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 import { BsHash } from "react-icons/bs";
 
 export default function Navbar() {
   return (
     <div>
-      <div className="container mx-auto flex items-center justify-between mt-4">
-        <div className="flex gap-2 items-center">
+      <div className="container mx-auto flex items-center justify-between  pt-4">
+        <Link href={"/"} className="flex gap-2 items-center">
           <Image
             src={"/logo.svg"}
             width={100}
@@ -14,8 +15,10 @@ export default function Navbar() {
             alt="Gallerio Logo"
             className="w-10 h-10"
           />
-          <p className="text-lg font-bold hover:subpixel-antialiased">Gallerio</p>
-        </div>
+          <p className="text-lg font-bold hover:subpixel-antialiased">
+            Gallerio
+          </p>
+        </Link>
 
         <form class="md:flex items-center hidden">
           <label for="simple-search" class="sr-only">
@@ -55,13 +58,14 @@ export default function Navbar() {
             <span class="sr-only">Search</span>
           </button>
         </form>
-
-        <button
-          type="submit"
-          class="text-neutral-900 bg-gray-200 hover:bg-gray-100 focus:ring-1 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm sm:w-auto px-5 py-2.5 text-center hover:subpixel-antialiased "
-        >
-          Login
-        </button>
+        <Link href={"/login"}>
+          <button
+            type="submit"
+            class="text-neutral-900 bg-gray-200 hover:bg-gray-100 focus:ring-1 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm sm:w-auto px-5 py-2.5 text-center hover:subpixel-antialiased "
+          >
+            Login
+          </button>
+        </Link>
       </div>
     </div>
   );
