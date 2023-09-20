@@ -1,6 +1,8 @@
 import NextAuth from "next-auth/next";
 import CredentialsProvider from "next-auth/providers/credentials";
-
+if(!process.env.NEXTAUTH_SECRET){
+  throw new Error("please provide process.env.NEXTAUTH_SECRET environment variable");
+}
 
 const handler = NextAuth({
   providers: [
@@ -34,15 +36,9 @@ const handler = NextAuth({
       },
     }),
   ],
-  callbacks: {
-    async redirect({ url, baseUrl }) {
-      // Allows relative callback URLs
-      if (url.startsWith("/")) return `${baseUrl}${url}`
-      // Allows callback URLs on the same origin
-      else if (new URL(url).origin === baseUrl) return url
-      return baseUrl
-    }
-  }
+session:{
+  strategy: "jwt",
+}
 
 });
 
