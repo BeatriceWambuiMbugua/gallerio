@@ -1,10 +1,9 @@
-// pages/index.js
+
 'use client';
 
-import { useSession } from 'next-auth/react';
 import Gallery from '@/components/Gallery';
-import Link from 'next/link';
 import LoginPage from '@/components/Login';
+import { useSession } from 'next-auth/react';
 
 export default function Home() {
   const { data: session, status } = useSession();
