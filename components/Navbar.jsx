@@ -58,7 +58,7 @@ export default function Navbar() {
             <span class="sr-only">Search</span>
           </button>
         </form>
-        <Link href={"/login"}>
+        <Link href={"/"}>
           <button
             type="submit"
             class="text-neutral-900 bg-gray-200 hover:bg-gray-100 focus:ring-1 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm sm:w-auto px-5 py-2.5 text-center hover:subpixel-antialiased "
