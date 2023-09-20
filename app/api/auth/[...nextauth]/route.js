@@ -32,6 +32,7 @@ const handler = NextAuth({
           return Promise.resolve(null);
         }
       },
+      redirect: false,
     }),
   ],
 
