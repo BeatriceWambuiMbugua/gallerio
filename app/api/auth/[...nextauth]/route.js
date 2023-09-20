@@ -32,9 +32,13 @@ const handler = NextAuth({
           return Promise.resolve(null);
         }
       },
-      redirect: false,
     }),
   ],
+  callbacks: {
+    async redirect(url, baseUrl) {
+      return baseUrl; // Specify your callback URL here
+    },
+  },
 
 });
 
