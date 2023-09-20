@@ -1,7 +1,7 @@
 "use client";
 
-import { useState } from "react";
 import { signIn } from "next-auth/react";
+import { useState } from "react";
 
 export default function LoginPage() {
   const [email, setEmail] = useState("");
@@ -73,7 +73,11 @@ export default function LoginPage() {
                     minLength="8"
                   />
                 </div>
-                {error && <p  className="text-xs" style={{ color: "red" }}>{error}</p>}
+                {error && (
+                  <p className="text-xs" style={{ color: "red" }}>
+                    {error}
+                  </p>
+                )}
                 <div className="flex items-center justify-between">
                   <div className="flex items-start">
                     <div className="flex items-center h-5">
@@ -85,7 +89,7 @@ export default function LoginPage() {
                         required=""
                       />
                     </div>
-                  
+
                     <div className="ml-3 text-sm">
                       <label
                         htmlFor="remember"
@@ -118,7 +122,6 @@ export default function LoginPage() {
                   </a>
                 </p>
               </form>
-             
             </div>
           </div>
         </div>
