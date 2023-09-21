@@ -1,9 +1,8 @@
 import Navbar from "@/components/Navbar";
-import "./globals.css";
 import { Inter } from "next/font/google";
-import { SessionProvider } from "next-auth/react";
-import NextAuthProvider from "./context/NextAuthProvider";
 import { Suspense } from "react";
+import NextAuthProvider from "./context/NextAuthProvider";
+import "./globals.css";
 import Loading from "./loading";
 
 const inter = Inter({ subsets: ["latin"] });
