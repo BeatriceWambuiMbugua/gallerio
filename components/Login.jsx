@@ -10,6 +10,7 @@ export default function LoginPage() {
   const [error, setError] = useState("");
   const router = useRouter();
   const callbackUrl = (router.query?.callbackUrl) ?? "/";
+  
 
   const handleSubmit = async (e) => {
     e.preventDefault();
