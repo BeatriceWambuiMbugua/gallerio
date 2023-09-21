@@ -35,7 +35,7 @@ const DraggableImage = ({ image, index, moveImage }) => {
       }}
     >
       <img
-        className="h-auto max-w-full rounded-lg"
+        className="h-auto max-w-full rounded-lg hover:cursor-move"
         src={image.url}
         alt={`Image ${image.id}`}
       />
@@ -43,7 +43,7 @@ const DraggableImage = ({ image, index, moveImage }) => {
         {image.tags.map((tag) => (
           <span
             key={tag}
-            className="bg-gray-200 py-2 px-3 rounded-lg capitalize hover:subpixel-antialiased tracking-wide hover:cursor-pointer"
+            className="bg-gray-200 py-2 px-3 rounded-lg capitalize text-sm hover:subpixel-antialiased tracking-normal hover:cursor-pointer"
           >
             {tag}
           </span>
