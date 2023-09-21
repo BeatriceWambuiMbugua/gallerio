@@ -7,7 +7,7 @@ import { Suspense } from "react";
 import Loading from "./loading";
 
 export default function Home() {
-  const { data: session, status } = useSession();
+  const { data: session } = useSession();
 
   // If the user is not logged in, show a login link
   if (!session) {
